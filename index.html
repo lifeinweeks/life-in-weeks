@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front Door ! This is the main page to this tiny website.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
+        body{margin: 0;background-color: #f8efec;}
+        /*ADD the following line to the template script and already made posters*/            
+        canvas{width: 100%;}
+        #upper{height: 50vh;text-align: center;display: grid;}
+        #main p{text-align: center;} 
+        h1{  font-family: "Teko", sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;}
+        ul{list-style: none;}
+        li{display: inline-block;padding: 0 5px 0 5px;}
+        p{margin-top: 0px;margin-bottom: 0;color: #8e7d77;}
+        p, a{font-size: 1em;font-family: "Noto Sans Mono", monospace;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-variation-settings:"wdth" 100;}
+        a{color: black; }
+        #events{height: 100vh;display: grid;grid-template-columns: 1fr 1fr 1fr;text-align: center;border: 1px dashed black;}
+        #events div{border: 1px dashed black;display: grid;align-items: center;height: 100%;}
+        #events a{text-decoration: none;font-family: "Teko", sans-serif;font-weight: 400;font-size: 1.2em;}
+        #goal{text-align: start;font-size: .7em;}
+        #goal p{color: black;}
+        #goal span{color: #8e7d77;}
+        #main{display: grid;align-content: center;width: 100%;}        
+        .squares{width: 10px;height: 10px;}
+        #exp li{display: ruby;}
+        #early {background-color: #a6d3ff;}
+        #creche{background-color: #9dd894;}
+        #elem{  background-color: #ffff94;}
+        #mid{   background-color: #ffc68c;}
+        #high{  background-color: #ff9c9c;}
+        #squareLife { background-color: #c9b7db;}
+        
+/*ADD the following css to the template script and already made posters*/            
+        @media only screen and (max-width: 880px ) { 
+            p, a{font-size: .8em;}
+            #main p{text-align: start;} 
+            #main{width: 80%;justify-self: center;}
+        
+
+        }
+        @media only screen and (max-width: 406px ) { 
+            #main{width: 95%;}
+            #events{grid-template-columns: 1fr 1fr ;}
+            #events div{height:100%;}
+        }
+        @media only screen and (max-width: 340px ) { 
+            p, a{font-size: .6em;}
+            #events{grid-template-columns: 1fr;}
+            #events div{height: 20vh;}
+            ul{padding-left: 0;}
+            #main{width: 95%;}
+        }
+    </style>
+</head>
+<body>
+    <section id="upper">
+        <div id="goal">
+            <p><span>Ultimate Goal: </span>Defeat Nature</p>
+            <p><span>Duration: </span>Unknown</p>
+        </div>
+        <div id="main">
+        <h1>Hello</h1>
+        <p>Below is a poster representing my life in weeks, Each Square represents a week of my life.</p>
+        <p>Each row is 1 year and It has random events from my life that i wrote about.</p>
+        <p>Scroll down after the poster to read.</p>
+        <p>Amuse yourself !</p>
+        <ul>
+            <li><a href="blog/blog.html"> Blog</a></li>
+            <li><a href="LiW.html">  Life in weeks</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>        <ul id="exp">
+            <li><div class="squares" id="early"></div><p>Early years</p></li>
+            <li><div class="squares" id="creche"></div><p>Creche</p></li>
+            <li><div class="squares" id="elem"></div>  <p>Elementary</p></li>
+            <li><div class="squares" id="mid"></div>   <p>Middle</p></li>
+            <li><div class="squares" id="high"></div>  <p>High</p></li>
+            <li><div class="squares" id="squareLife"></div>  <p>Life</p></li>
+        </ul>
+        </div>
+    </section>
+        <section id="life">
+        <canvas id="canvas" width="1350%" height="1200%"></canvas> 
+    </section>
+    <section id="events">
+<a href="#"><div>Hello world</div></a>
+<a href="#"><div>Anxiety</div></a>
+<a href="#"><div>League addiction</div></a>
+<a href="#"><div>Depression</div></a>
+<a href="#"><div>Religion</div></a>
+<a href="#"><div>Dream School EXAM</div></a>
+<a href="#"><div>Start in Dream School</div></a>
+<a href="#"><div>First Time Drumming</div></a>
+<a href="#"><div>My BFF's first time drinking</div></a>
+<a href="#"><div>My first time in cinema</div></a>
+<a href="#"><div>Tiny Birthday party</div></a>
+<a href="#"><div>Therapy</div></a>
+<a href="#"><div>hashich</div></a>
+<a href="#"><div>lost tooth</div></a>
+<a href="#"><div>First Party</div></a>
+<a href="#"><div>Dropped out</div></a>
+<a href="#"><div>My friend's worst week</div></a>
+<a href="#"><div>First half-Marathon</div></a>
+<a href="./lifeinweeks/gnawa/gnawa_tracker.html"><div>first Gnawa Show</div></a>
+<a href="#"><div>call center</div></a>
+    </section>
+    <script>
+  const ctx = document.getElementById("canvas").getContext("2d");
+    let left_eventsSX = 190;
+    let religionStartY = 140;
+    let school_examSY = 160;
+    let drumsStartX = 10;
+    let drumsStartY = 210;
+    let bffX = 1080;
+    let bffY = 310;
+    let therapyX = 10;
+    let therapyY = 290;
+    let droppedX = 1080;
+    let droppedY = 340;
+    let partyX = 1080;
+    let partyY = 280;
+    let schoolX = 1135;
+    let schoolY = 240;
+    let hashX = 100;
+    let hashY = 240;
+    let cinemaX = 10;
+    let cinemaY = 340;
+    let birthdayX = 1080;
+    let birthdayY = 360;
+    let toothX = 1080;
+    let toothY = 210;
+    let call_centerX = 10;
+    let call_centerY = 180;
+    let salahX = 10;
+    let salahY = 380;
+    let gnawa_showX = 10;
+    let gnawa_showY= 450;
+    let marathonX = 10;
+    let marathonY = 500;
+  //Square
+    function draw(x, y, color) {      
+        ctx.fillStyle = color;        
+        ctx.fillRect(x, y, 10, 10);
+        //ctx.strokeRect(x, y, 10, 10);
+}
+function draw_uncolored(x, y) {      
+        ctx.strokeRect(x, y, 10, 10);
+}
+
+let YAxis = 10;
+let weeks = 0;
+for (let i = 1; i <= 90; i++) {
+    let XAxis = 350;
+    for (let index = 1; index <= 52; index++) {
+        if (i <= 4)
+            draw(XAxis, YAxis, '#a6d3ff');
+        else if (i <= 6)
+            draw(XAxis, YAxis, '#9dd894');
+        else if (i <= 12)
+            draw(XAxis, YAxis, '#ffff94');
+        else if (i <= 15)
+            draw(XAxis, YAxis, '#ffc68c');
+        else if (i <= 18)
+            draw(XAxis, YAxis, '#ff9c9c');
+        else if (i <= 24)//18 OCT 2023 
+            draw(XAxis, YAxis, '#c9b7db');
+        else if (i == 25 && index <= 21)//Additional weeks after my latest birthday
+            draw(XAxis, YAxis, '#c9b7db');
+        else
+            draw_uncolored(XAxis, YAxis);
+        
+        XAxis += 13;
+    }
+    weeks += 52;
+    console.log(`The number of weeks is ${weeks}`);
+    YAxis += 13;
+}
+
+
+//TEXT events 
+function draw_events() {
+    ctx.font = "15px serif"; 
+    ctx.fillStyle = 'black';        
+    ctx.fillText("Hello world", left_eventsSX, 50);
+    ctx.fillStyle = 'black';        
+    ctx.fillText("Anxiety", 30, 10);
+    ctx.fillStyle = 'red';        
+    ctx.fillText("League addiction", 1100, 60);
+    ctx.fillStyle = 'purple';
+    ctx.fillText("Depression", left_eventsSX, 90);
+    ctx.fillStyle = 'green';
+    ctx.fillText("Religion", left_eventsSX, religionStartY);
+    ctx.fillStyle = 'blue';
+    ctx.fillText("Dream School EXAM", 1100, school_examSY);
+    ctx.fillStyle = 'orange';
+    ctx.fillText("Start in Dream School", schoolX, schoolY);
+    ctx.fillStyle = 'Salmon';
+    ctx.fillText("First Time Drumming", drumsStartX, drumsStartY);
+    ctx.fillStyle = 'green';
+    ctx.fillText("My BFF's first time drinking", bffX, bffY);
+    ctx.fillStyle = 'red';
+    ctx.fillText("My first time in cinema", cinemaX, cinemaY);
+    ctx.fillStyle = 'blue';
+    ctx.fillText("Tiny Birthday party", birthdayX, birthdayY);
+    ctx.fillStyle = 'blue';
+    ctx.fillText("Therapy", therapyX, therapyY);
+    ctx.fillStyle = 'purple';
+    ctx.fillText("hashich", hashX, hashY);
+    ctx.fillStyle = 'purple';
+    ctx.fillText("lost tooth", toothX, toothY);
+    ctx.fillStyle = 'black';
+    ctx.fillText("First Party", partyX, partyY);
+    ctx.fillStyle = 'red';
+    ctx.fillText("Dropped out", droppedX, droppedY);
+    ctx.fillStyle = 'green';
+    ctx.fillText("worst week in my friends life", salahX, salahY);
+    ctx.fillStyle = 'orange';
+    ctx.fillText("gnawa Show", gnawa_showX, gnawa_showY);
+    ctx.fillStyle = 'black';
+    ctx.fillText("First half-Marathon", marathonX, marathonY);
+    ctx.fillStyle = 'orange';
+    ctx.fillText("call center", call_centerX, call_centerY);
+}
+draw_events();
+//DRAW A LINEs and Circles
+function event_zero(startX, startY, endX, endY, color = 'black', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+event_zero(left_eventsSX + 95, 50, 350, 17);
+
+function event_one(startX, startY, endX, endY, color = 'pink', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+event_one(90, 10, 350, 15);
+
+function event_two(startX, startY, endX, endY, color = 'red', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX , startY); // Move to starting point
+            ctx.lineTo(endX + 12, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+event_two(1150, 70, 870, 223);
+
+function event_three(startX, startY, endX, endY, color = 'purple', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+event_three(left_eventsSX + 90, 90, 701, 236);
+
+function event_four(startX, startY, endX, endY, color = 'green', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+event_four(left_eventsSX + 70, religionStartY, 350, 249);
+
+
+function event_five(startX, startY, endX, endY, color = 'blue', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+           // ctx.lineTo(startX + 3, startY + 55);
+            ctx.lineTo(endX + 11, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+event_five(1150, school_examSY + 10, 715, 288);
+
+function school_start(startX, startY, endX, endY, color = 'orange', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(startX, startY + 8);
+            ctx.lineTo(endX + 11, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+school_start(schoolX, schoolY, 870, 288);
+
+function drumming(startX, startY, endX, endY, color = 'salmon', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(startX, startY + 10);
+            ctx.lineTo(startX + 30, startY + 10);
+            ctx.lineTo(startX + 30, startY + 30);
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+drumming(drumsStartX + 10, drumsStartY + 10, 351, 302);
+
+function salah(startX, startY, endX, endY, color = 'green', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+salah(salahX + 225, salahY, 470, 325);
+
+function marathon(startX, startY, endX, endY, color = 'black', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+marathon(marathonX + 155, marathonY, 390, 315);
+
+function bff(startX, startY, endX, endY, color = 'green', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX + 11, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+bff(bffX , bffY, 935, 302);
+
+function therapy(startX, startY, endX, endY, color = 'blue', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+therapy(therapyX + 70, therapyY, 363, 315);
+
+function dropped(startX, startY, endX, endY, color = 'red', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX + 11, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+dropped(droppedX , droppedY, 950, 315);
+
+function party(startX, startY, endX, endY, color = 'black', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX + 11, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+party(partyX , partyY, 896, 288);
+
+function hash(startX, startY, endX, endY, color = 'black', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX , endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+hash(hashX + 70, hashY, 610 , 275);
+
+function cinema(startX, startY, endX, endY, color = 'red', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX , endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+cinema(cinemaX + 180, cinemaY, 636, 315);
+
+function birthday(startX, startY, endX, endY, color = 'blue', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX + 12, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+birthday(birthdayX, birthdayY, 897, 315);
+
+function tooth(startX, startY, endX, endY, color = 'purple', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX + 12, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+tooth(toothX, toothY, 819, 275);
+
+
+function call_center(startX, startY, endX, endY, color = 'orange', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX , endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+call_center(call_centerX + 80, call_centerY, 600, 263);
+
+function gnawa_show(startX, startY, endX, endY, color = 'orange', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX , endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+gnawa_show(gnawa_showX + 100, gnawa_showY, 505, 327);
+    </script>
+</body>
+</html>
+</html>
