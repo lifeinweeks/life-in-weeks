@@ -91,12 +91,14 @@
 <a href="./infinite_jest.html"><div>Finish infinite jest</div></a>
 <a href="./stranger.html"><div>Finish albert camus - the stranger</div></a>
 <a href="./behave.html"><div>Read Behave by robert sapolsky cover to cover.</div></a>
+<a href="./kolawriz9.html"><div>Read my brother's short story Kol w riz9.</div></a>
 
     </section>
     <script>
   const ctx = document.getElementById("canvas").getContext("2d");
     let left_eventsSX = 190;
     let the_stranger= 10;
+    let kola_wriz9= 30;
 
 
   //Square
@@ -143,8 +145,10 @@ function draw_events() {
     ctx.font = "15px serif"; 
     ctx.fillStyle = 'black';        
     ctx.fillText("Hello reading", left_eventsSX, 50);
-    ctx.fillText("Finished reading", the_stranger + 55, 120);
-    ctx.fillText("THE STRANGER by ALBERT CAMUS", the_stranger, 140);
+    ctx.fillText("Finished reading", the_stranger + 55, 80);
+    ctx.fillText("THE STRANGER by ALBERT CAMUS", the_stranger, 100);
+    ctx.fillStyle = 'red';        
+    ctx.fillText("Kolo w riz9 (كل ورزق) by my brother", kola_wriz9, 190);
 }
 draw_events();
 //DRAW A LINEs and Circles
@@ -169,8 +173,18 @@ function event_one(startX, startY, endX, endY, color = 'black', lineWidth = 3) {
             ctx.stroke(); // Stroke the path
             ctx.closePath(); // Close path
         }
-event_one(the_stranger + 95, 150, 520, 325);
-
+event_one(the_stranger + 180, 110, 520, 325);
+function kolawriz9(startX, startY, endX, endY, color = 'red', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+kolawriz9(kola_wriz9 + 95, 200, 545, 325);
     </script>
 </body>
 </html>

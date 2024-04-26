@@ -90,6 +90,7 @@
 <a href="#"><div>Hello Meditation</div></a>
 <a href="streak_one.html"><div>Meditate 7 days in a row</div></a>
 <a href="streak_two.html"><div>Meditate 3 times a day for 3 days in a row</div></a>
+<a href="wakingup6months.html"><div>My first 6 Months using the waking up to meditate</div></a>
 
     </section>
     <script>
@@ -97,6 +98,8 @@
     let left_eventsSX = 190;
     let seven_days_meditation_vert = 150;
     let seven_days_meditation_hor = 50;
+    let wakingupX= 100;
+    let wakingupY= 100;
   //Square
     function draw(x, y, color) {      
         ctx.fillStyle = color;        
@@ -142,6 +145,8 @@ function draw_events() {
     ctx.fillStyle = 'black';        
     ctx.fillText("Hello meditation", left_eventsSX, 50);
     ctx.fillText("Meditate for 7 days in a row", seven_days_meditation_hor, seven_days_meditation_vert);
+    ctx.fillStyle = 'red';        
+    ctx.fillText("my 6 months using waking up", wakingupX, wakingupY);
 }
 draw_events();
 //DRAW A LINEs and Circles
@@ -167,6 +172,17 @@ function seven_days_meditation(startX, startY, endX, endY, color = 'black', line
             ctx.closePath(); // Close path
         }
 seven_days_meditation(seven_days_meditation_hor + 95, seven_days_meditation_vert, 530, 330);
+function wakingup6months(startX, startY, endX, endY, color = 'red', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+wakingup6months(wakingupX + 95, wakingupY, 545, 330);
     </script>
 </body>
 </html>
