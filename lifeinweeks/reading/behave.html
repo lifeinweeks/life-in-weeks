@@ -1,35 +1,10 @@
-const fs = require('fs');
-const path = require('path');
 
-
-// Get the unique filename from command line arguments
-const filename = process.argv[2];
-const title = process.argv[3];
-const tldr = process.argv[4];
-const question = process.argv[5];
-const date = new Date();
-
-//display usage
-if (filename == "usage")
-{
-    console.log('<Program Name> <filename or location> <title> <tldr> <question>');
-    process.exit(0);
-}
-
-// Check if filename is provided
-if (!filename || !title || !tldr || !question) {
-  console.error('Unvalid arguments.');
-  process.exit(1);
-}
-
-// Generate HTML content
-const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${filename} tracker</title>
+    <title>reading tracker</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
@@ -51,16 +26,18 @@ const htmlContent = `
     
     <div id="main">
         <div>
-            <h1>${title}.</h1>
-            <p id="date">${date}</p>
-            <p id="desc">TL;DR ${tldr}.</p>
-            <a href="#definition">${question} ?</a>
+            <h1>Read Behave by robert sapolsky cover to cover..</h1>
+            <p id="date">Fri Apr 26 2024 16:06:59 GMT+0100 (GMT+01:00)</p>
+            <p id="desc">TL;DR I terminated this goal to persue a better goal which includes continuing to read the book above.</p>
+            <a href="#definition">Why stopping ?</a>
         </div>
     </div>
 
     <div id="content">
-<h3 id="definition">${question} ?</h3> 
-    <p>.</p>
+<h3 id="definition">Why stopping ?</h3> 
+    <p>This book is over 1000 pages over, it's quite techincal for me which makes it less fun at times<br>
+        That's why i decided to make another goal of reading it alongside other shorter books.<br>
+    I will continue from where i left off which is not much.</p>
 
 
         </div>
@@ -68,15 +45,3 @@ const htmlContent = `
         <div id="right"></div>
 </body>
 </html>
-`;
-
-// Write HTML content to file
-const filePath = path.join(__dirname, `/lifeinweeks/${filename}/${filename}_tracker.html`);
-
-fs.writeFileSync(filePath, htmlContent, (err) => {
-  if (err) {
-    console.error('Error writing HTML file:', err);
-    process.exit(1);
-  }
-  console.log(`HTML file "${filename}.html" created successfully.`);
-});

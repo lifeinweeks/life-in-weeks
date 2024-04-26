@@ -58,9 +58,9 @@
 <body>
     <section id="upper">       
      <div id="goal">
-    <p><span>Current Goal: </span>do <a href="https://www.youtube.com/shorts/XdHQpSJXLAY">This</a> abs workout (5 times).</p>
-    <p><span>Duration: </span>undefined</p>
-    <p><span>Started: </span>08 april 2024</p>
+    <p><span>Current Goal: </span>100 Pushups in less sets than the previous time.</p>
+    <p><span>Duration: </span>Undefined</p>
+    <p><span>Started: </span>26 april 2024</p>
 </div>
 <div id="main">
         <h1>callisthenics</h1>
@@ -88,12 +88,14 @@
     </section>
     <section id="events">
 <a href="#"><div>Hello callisthenics</div></a>
-<a href="./callisthenics_tracker.html"><div>100 Pushups</div></a>
-
+<a href="./hun_pushups.html"><div>100 Pushups</div></a>
+<a href="./goggins_abs.html"><div>The david goggins abs workout</div></a>
+<a href="./hun_pushups2.html"><div>100 Pushups x2</div></a>
     </section>
     <script>
   const ctx = document.getElementById("canvas").getContext("2d");
     let left_eventsSX = 190;
+    let goggins_abs_X= 100;
 
   //Square
     function draw(x, y, color) {      
@@ -139,9 +141,9 @@ function draw_events() {
     ctx.font = "15px serif"; 
     ctx.fillStyle = 'black';        
     ctx.fillText("Hello callisthenics", left_eventsSX, 50);
-    ctx.font = "15px serif"; 
-    ctx.fillStyle = 'black';        
     ctx.fillText("100 push ups", left_eventsSX, 160);
+    ctx.fillStyle = 'red';        
+    ctx.fillText("goggins abs workout", goggins_abs_X , 180);
 }
 draw_events();
 //DRAW A LINEs and Circles
@@ -168,6 +170,17 @@ function event_one(startX, startY, endX, endY, color = 'black', lineWidth = 3) {
             ctx.closePath(); // Close path
         }
 event_one(left_eventsSX + 120, 160, 509, 328);
+function goggins_abs(startX, startY, endX, endY, color = 'red', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+goggins_abs(goggins_abs_X + 120, 190, 535, 328);
     </script>
 </body>
 </html>

@@ -1,35 +1,10 @@
-const fs = require('fs');
-const path = require('path');
 
-
-// Get the unique filename from command line arguments
-const filename = process.argv[2];
-const title = process.argv[3];
-const tldr = process.argv[4];
-const question = process.argv[5];
-const date = new Date();
-
-//display usage
-if (filename == "usage")
-{
-    console.log('<Program Name> <filename or location> <title> <tldr> <question>');
-    process.exit(0);
-}
-
-// Check if filename is provided
-if (!filename || !title || !tldr || !question) {
-  console.error('Unvalid arguments.');
-  process.exit(1);
-}
-
-// Generate HTML content
-const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${filename} tracker</title>
+    <title>callisthenics tracker</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
@@ -51,16 +26,16 @@ const htmlContent = `
     
     <div id="main">
         <div>
-            <h1>${title}.</h1>
-            <p id="date">${date}</p>
-            <p id="desc">TL;DR ${tldr}.</p>
-            <a href="#definition">${question} ?</a>
+            <h1>Doing the david goggins abs workout (done 16 april 2024).</h1>
+            <p id="date">Wed Apr 17 2024 13:31:43 GMT+0100 (GMT+01:00)</p>
+            <p id="desc">TL;DR I did the goggins abs workout, it was hard but not as hard as i imagined.</p>
+            <a href="#definition">what is the goggins abs workout ?</a>
         </div>
     </div>
 
     <div id="content">
-<h3 id="definition">${question} ?</h3> 
-    <p>.</p>
+<h3 id="definition">what is the goggins abs workout ?</h3> 
+    <a href="https://www.youtube.com/shorts/XdHQpSJXLAY">this</a>
 
 
         </div>
@@ -68,15 +43,3 @@ const htmlContent = `
         <div id="right"></div>
 </body>
 </html>
-`;
-
-// Write HTML content to file
-const filePath = path.join(__dirname, `/lifeinweeks/${filename}/${filename}_tracker.html`);
-
-fs.writeFileSync(filePath, htmlContent, (err) => {
-  if (err) {
-    console.error('Error writing HTML file:', err);
-    process.exit(1);
-  }
-  console.log(`HTML file "${filename}.html" created successfully.`);
-});

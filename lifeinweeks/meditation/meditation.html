@@ -58,9 +58,9 @@
 <body>
     <section id="upper">       
      <div id="goal">
-    <p><span>Current Goal: </span>Meditate 7 days in a row.</p>
-    <p><span>Duration: </span>7 days</p>
-    <p><span>Started: </span>04 april 2024</p>
+    <p><span>Current Goal: </span>Meditate 3 times a day for 3 days in a row.</p>
+    <p><span>Duration: </span>3 days</p>
+    <p><span>Started: </span>22 april 2024</p>
 </div>
 <div id="main">
         <h1>meditation</h1>
@@ -89,12 +89,14 @@
     <section id="events">
 <a href="#"><div>Hello Meditation</div></a>
 <a href="streak_one.html"><div>Meditate 7 days in a row</div></a>
+<a href="streak_two.html"><div>Meditate 3 times a day for 3 days in a row</div></a>
 
     </section>
     <script>
   const ctx = document.getElementById("canvas").getContext("2d");
     let left_eventsSX = 190;
-
+    let seven_days_meditation_vert = 150;
+    let seven_days_meditation_hor = 50;
   //Square
     function draw(x, y, color) {      
         ctx.fillStyle = color;        
@@ -139,6 +141,7 @@ function draw_events() {
     ctx.font = "15px serif"; 
     ctx.fillStyle = 'black';        
     ctx.fillText("Hello meditation", left_eventsSX, 50);
+    ctx.fillText("Meditate for 7 days in a row", seven_days_meditation_hor, seven_days_meditation_vert);
 }
 draw_events();
 //DRAW A LINEs and Circles
@@ -153,6 +156,17 @@ function event_zero(startX, startY, endX, endY, color = 'black', lineWidth = 3) 
             ctx.closePath(); // Close path
         }
 event_zero(left_eventsSX + 95, 30, 350, 17);
+function seven_days_meditation(startX, startY, endX, endY, color = 'black', lineWidth = 3) {
+            ctx.beginPath(); // Begin path
+            ctx.strokeStyle = color; // Set line color
+            ctx.lineWidth = lineWidth; // Set line width
+            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
+            ctx.moveTo(startX, startY); // Move to starting point
+            ctx.lineTo(endX, endY); // Draw line to ending point
+            ctx.stroke(); // Stroke the path
+            ctx.closePath(); // Close path
+        }
+seven_days_meditation(seven_days_meditation_hor + 95, seven_days_meditation_vert, 530, 330);
     </script>
 </body>
 </html>

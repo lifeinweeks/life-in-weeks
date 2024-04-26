@@ -1,35 +1,10 @@
-const fs = require('fs');
-const path = require('path');
 
-
-// Get the unique filename from command line arguments
-const filename = process.argv[2];
-const title = process.argv[3];
-const tldr = process.argv[4];
-const question = process.argv[5];
-const date = new Date();
-
-//display usage
-if (filename == "usage")
-{
-    console.log('<Program Name> <filename or location> <title> <tldr> <question>');
-    process.exit(0);
-}
-
-// Check if filename is provided
-if (!filename || !title || !tldr || !question) {
-  console.error('Unvalid arguments.');
-  process.exit(1);
-}
-
-// Generate HTML content
-const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${filename} tracker</title>
+    <title>callisthenics tracker</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
@@ -51,16 +26,19 @@ const htmlContent = `
     
     <div id="main">
         <div>
-            <h1>${title}.</h1>
-            <p id="date">${date}</p>
-            <p id="desc">TL;DR ${tldr}.</p>
-            <a href="#definition">${question} ?</a>
+            <h1>100 Push ups.</h1>
+            <p id="date">Mon Apr 08 2024 03:47:26 GMT+0000 (GMT)</p>
+            <p id="desc">TL;DR I have done 100 push ups in one session (not set).</p>
+            <a href="#definition">Why do it ? </a> 
+            <a href="#how"> how was it ?</a> 
         </div>
     </div>
 
     <div id="content">
-<h3 id="definition">${question} ?</h3> 
-    <p>.</p>
+<h3 id="definition">Why do it ?</h3> 
+    <p>For the mental strength it provides, to be healthy and look good. I rarely was consistent with training for long periods of time so i try to push my limit with every session of training instead of slowely building the habit hence 100 push ups and not less. </p>
+<h3 id="how">How was it ?</h3>    
+    <p>I did it in the kitchen randomly, IT was easier than i imagined, I did 12 sets as the following [15 10 10 10 10 10 10 7 5 7 5 1]</p>
 
 
         </div>
@@ -68,15 +46,3 @@ const htmlContent = `
         <div id="right"></div>
 </body>
 </html>
-`;
-
-// Write HTML content to file
-const filePath = path.join(__dirname, `/lifeinweeks/${filename}/${filename}_tracker.html`);
-
-fs.writeFileSync(filePath, htmlContent, (err) => {
-  if (err) {
-    console.error('Error writing HTML file:', err);
-    process.exit(1);
-  }
-  console.log(`HTML file "${filename}.html" created successfully.`);
-});
