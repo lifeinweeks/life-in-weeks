@@ -1,0 +1,13 @@
+{Problem solving}
+
+[understanding the problem]
+
+- Make sure you fully understand the problem, you can go down the wrong rabbit hole wasting so much time and effort and feeling burnt out just because you missed a essential condition in the problem.
+- Spend as much time as you need in understanding the problem, do not rush it, Meditate on it.
+- Make sure you focus on test cases, understanding test cases is part of understanding the problem.
+- make your own if you do't have any test cases.
+
+[being mislead]
+
+-  today, I encoutered a problem in which i eventually understood the problem but i was "mislead" by the test case codeforces provided [https://codeforces.com/problemset/problem/1372/A]
+    - This might happen in real life, that's why you should think of your own test cases, preferably radically different ones.
