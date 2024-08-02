@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meditation Door ! This is the meditation page in this tiny website, here i track every worthy event related to meditation.</title>
+    <title>concepts Door ! This is the concepts page in this tiny website, here i track every worthy event related to concepts.</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
@@ -33,8 +33,8 @@
         #mid{   background-color: #ffc68c;}
         #high{  background-color: #ff9c9c;}
         #squareLife { background-color: #c9b7db;}
-     /*ADD the following css to the template script and already made posters*/            
-     @media only screen and (max-width: 880px ) { 
+        /*ADD the following css to the template script and already made posters*/            
+        @media only screen and (max-width: 880px ) { 
             p, a{font-size: .8em;}
             #main p{text-align: start;} 
             #main{width: 80%;justify-self: center;}
@@ -58,16 +58,14 @@
 <body>
     <section id="upper">       
      <div id="goal">
-    <p><span>Current Goal: </span>Meditate 2 times a day {0}.</p>
-
-
+    <p><span>Current Goal: </span>reasearch/think through a concept.</p>
     <p><span>Duration: </span>unkown</p>
-    <p><span>Started: </span>20 June 2024</p>
+    <p><span>Started: </span>20 June</p>
 </div>
 <div id="main">
-        <h1>meditation</h1>
+        <h1>concepts</h1>
         <p>Below is a poster representing my life in weeks, Each Square represents a week of my life.</p>
-        <p>Each row is 1 year and It has events related to my journey in the topic of <span id="topic">{meditation}</span>.</p>
+        <p>Each row is 1 year and It has events related to my journey in the topic of <span id="topic">{concepts}</span>.</p>
         <p>Scroll down after the poster to read.</p>
         <p>Amuse yourself !</p>
         <ul>
@@ -89,20 +87,13 @@
         <canvas id="canvas" width="1350%" height="1200%"></canvas> 
     </section>
     <section id="events">
-<a href="#"><div>Hello Meditation</div></a>
-<a href="streak_one.html"><div>Meditate 7 days in a row</div></a>
-<a href="streak_two.html"><div>Meditate 3 times a day for 3 days in a row</div></a>
-<a href="wakingup6months.html"><div>My first 6 Months using the waking up to meditate</div></a>
-<a href="streak_three.html"><div>Meditate 2 times a day for 7 days</div></a>
+<a href="#"><div>Hello concepts</div></a>
 
     </section>
     <script>
   const ctx = document.getElementById("canvas").getContext("2d");
     let left_eventsSX = 190;
-    let seven_days_meditation_vert = 150;
-    let seven_days_meditation_hor = 50;
-    let wakingupX= 100;
-    let wakingupY= 100;
+
   //Square
     function draw(x, y, color) {      
         ctx.fillStyle = color;        
@@ -146,10 +137,7 @@ for (let i = 1; i <= 90; i++) {
 function draw_events() {
     ctx.font = "15px serif"; 
     ctx.fillStyle = 'black';        
-    ctx.fillText("Hello meditation", left_eventsSX, 50);
-    ctx.fillText("Meditate for 7 days in a row", seven_days_meditation_hor, seven_days_meditation_vert);
-    ctx.fillStyle = 'red';        
-    ctx.fillText("my 6 months using waking up", wakingupX, wakingupY);
+    ctx.fillText("Hello concepts", left_eventsSX, 50);
 }
 draw_events();
 //DRAW A LINEs and Circles
@@ -164,28 +152,6 @@ function event_zero(startX, startY, endX, endY, color = 'black', lineWidth = 3) 
             ctx.closePath(); // Close path
         }
 event_zero(left_eventsSX + 95, 30, 350, 17);
-function seven_days_meditation(startX, startY, endX, endY, color = 'black', lineWidth = 3) {
-            ctx.beginPath(); // Begin path
-            ctx.strokeStyle = color; // Set line color
-            ctx.lineWidth = lineWidth; // Set line width
-            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
-            ctx.moveTo(startX, startY); // Move to starting point
-            ctx.lineTo(endX, endY); // Draw line to ending point
-            ctx.stroke(); // Stroke the path
-            ctx.closePath(); // Close path
-        }
-seven_days_meditation(seven_days_meditation_hor + 95, seven_days_meditation_vert, 530, 330);
-function wakingup6months(startX, startY, endX, endY, color = 'red', lineWidth = 3) {
-            ctx.beginPath(); // Begin path
-            ctx.strokeStyle = color; // Set line color
-            ctx.lineWidth = lineWidth; // Set line width
-            ctx.arc(endX + 5, endY, 8, 0, Math.PI * 2, true);
-            ctx.moveTo(startX, startY); // Move to starting point
-            ctx.lineTo(endX, endY); // Draw line to ending point
-            ctx.stroke(); // Stroke the path
-            ctx.closePath(); // Close path
-        }
-wakingup6months(wakingupX + 95, wakingupY, 545, 330);
     </script>
 </body>
 </html>

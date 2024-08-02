@@ -1,0 +1,26 @@
+[Products]
+ Clean House
+ Clean hair
+ Showered(exfoliate)
+ shaven
+ clean ironed clothing
+ clean nails
+ brush after every meal
+ clean ears
+ floss
+ conditioner
+
+[daily Habits]
+
+ Khar9a
+ shampoo
+ soap
+ deodorant
+ nail clippers
+ brush
+ toothpaste
+ cotton swabs
+ moisteruzier
+ flosser
+ conditioner}
+
